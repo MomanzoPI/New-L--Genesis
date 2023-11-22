@@ -263,7 +263,7 @@
       };
 
 
-      fetch('https://your-backend-url/submit', {
+      fetch('http://127.0.0.1:5500/index2.html', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -275,13 +275,13 @@
         console.log(data);
       });
 
-      emailjs.send("SendGrid", "service_e8atbwx", formData, "Jeronimo Pereyra I")
+      emailjs.send("Mailgun", "service_e8atbwx", formData, "Jeronimo Pereyra I")
         .then(
           function(response) {
-            console.log("Email sent successfully:", response);
+            console.log("Email:", response);
           },
           function(error) {
-            console.log("Email failed to send:", error);
+            console.log("Email failed:", error);
           }
         );
 
